@@ -56,14 +56,14 @@ namespace CST117_IC08_console
 
 		public Set union(Set rhs)
 		{
-			//Swapped 'rhs' and 'this' - This sets the union up properly
-			//for (int i = 0; i < rhs.elements.Count; i++)
-			for (int i = 0; i < this.elements.Count; i++)
+			for (int i = 0; i < rhs.elements.Count; i++)
 			{
-				//this.addElement(rhs.elements[i]);
-				rhs.addElement(this.elements[i]);
+				this.addElement(rhs.elements[i]);
 			}
-			return rhs;
+
+			//Swapped 'rhs' and 'this' - this returns the proper Set.	
+			//return rhs
+			return this;
 		}
 	}
 }
