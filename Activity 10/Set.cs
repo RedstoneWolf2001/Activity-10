@@ -32,7 +32,7 @@ namespace CST117_IC08_console
 			{
 				if (val == elements[i])
 					return true;
-				//These lines are not needed because it will return false at the end of the loop.
+				//These lines are not valid since it will return false if and only if all the elements have been checked.
 				//else
 					//return false;
 			}
@@ -56,14 +56,22 @@ namespace CST117_IC08_console
 
 		public Set union(Set rhs)
 		{
+			//Added an extra set to keep the working set pure
+			Set hold = new Set();
+			for (int i =0; i < elements.Count; i++)
+            {
+				hold.elements.Add(elements[i]);
+            }
+			//
+
 			for (int i = 0; i < rhs.elements.Count; i++)
 			{
-				this.addElement(rhs.elements[i]);
+				hold.addElement(rhs.elements[i]);
 			}
 
-			//Swapped 'rhs' and 'this' - this returns the proper Set.	
+			//Removed 'rhs' and added the hold set to 
 			//return rhs
-			return this;
+			return hold;
 		}
 	}
 }
